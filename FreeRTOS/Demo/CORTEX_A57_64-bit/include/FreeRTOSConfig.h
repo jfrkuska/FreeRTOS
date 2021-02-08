@@ -195,5 +195,12 @@ QEMU-Virt. */
 
 #define configUSE_TRACE_FACILITY				0
 
+// Adding tracing support for Trace32s FreeRTOS awareness
+#define traceTASK_SWITCHED_IN() \
+  { \
+    __asm volatile ("msr contextidr_el1,%0" : :"r" (pxCurrentTCB));	\
+  }
+
+
 #endif /* FREERTOS_CONFIG_H */
 
