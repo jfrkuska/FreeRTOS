@@ -1,11 +1,11 @@
 ENTRY(_boot)
 
-STACKTOP = 0x41000000;
+STACKTOP = 0x81000000;
 
 SECTIONS
 {
 	/* Starts at LOADER_ADDR. */
-	. = 0x40000000;
+	. = 0x80000000;
 	__start = .;
 	__text_start = .;
 	.text :
